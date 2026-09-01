@@ -1,0 +1,2 @@
+ALTER TABLE users ADD COLUMN stage_id INTEGER;
+ALTER TABLE users ADD COLUMN academic_field_id INTEGER;

@@ -1,0 +1,28 @@
+{
+  "name": "tawjihi-time-frontend",
+  "version": "1.0.0",
+  "description": "Tawjihi Time - Educational Platform Frontend",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^6.16.0",
+    "zustand": "^4.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-react": "^7.33.0",
+    "terser": "^5.51.2",
+    "vite": "^4.5.0"
+  }
+}

@@ -1,0 +1,114 @@
+.streak-page {
+  min-height: calc(100vh - 110px);
+  display: grid;
+  place-items: center;
+  padding: 28px 20px 70px;
+  background: radial-gradient(circle at 50% 0, #fff2d6 0, transparent 34%), #f8fafb;
+}
+
+.streak-card {
+  width: min(100%, 540px);
+  position: relative;
+  overflow: hidden;
+  padding: 52px 30px 38px;
+  border: 1px solid #f2dfbb;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #fffdf8, #fff6e5);
+  box-shadow: 0 22px 60px rgba(160, 103, 34, 0.14);
+  text-align: center;
+}
+
+.streak-card::after {
+  content: '';
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  top: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(255, 190, 73, 0.16);
+}
+
+.streak-flame {
+  position: relative;
+  z-index: 1;
+  width: 94px;
+  height: 94px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  border-radius: 30px;
+  background: #fff0c9;
+  box-shadow: 0 12px 24px rgba(237, 157, 38, 0.2);
+  font-size: 53px;
+  animation: streak-pulse 2.4s ease-in-out infinite;
+}
+
+.streak-eyebrow {
+  margin: 0 0 5px;
+  color: #c47a18;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.streak-card h1 {
+  margin: 0;
+  color: #4b3422;
+  font-size: 28px;
+}
+
+.streak-number {
+  margin-top: 18px;
+  color: #e36b20;
+  font-size: 86px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.streak-days {
+  margin: 8px 0 0;
+  color: #87552e;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.streak-message {
+  max-width: 340px;
+  margin: 22px auto 0;
+  color: #795f49;
+  font-size: 15px;
+}
+
+.streak-last-login {
+  margin: 24px 0 0;
+  padding-top: 17px;
+  border-top: 1px solid #f0ddb9;
+  color: #a08061;
+  font-size: 12px;
+}
+
+@keyframes streak-pulse {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.04); }
+}
+
+@media (max-width: 500px) {
+  .streak-page {
+    padding: 18px 12px 50px;
+  }
+
+  .streak-card {
+    padding: 40px 20px 30px;
+    border-radius: 22px;
+  }
+
+  .streak-card h1 {
+    font-size: 24px;
+  }
+
+  .streak-number {
+    font-size: 72px;
+  }
+}
