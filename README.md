@@ -1,456 +1,390 @@
-# Tawjihi Time - Complete Production Educational Platform
+# Tawjihi Time - الوقت الدراسي
 
-A full-stack, production-ready educational web platform designed for Jordanian Tawjihi students. Built with Node.js, Express, React, and PostgreSQL.
+A complete, production-ready educational platform built specifically for Jordanian Tawjihi students.
 
-## 🎯 Project Overview
+**Website:** [Your Production URL] (To be configured)
 
-Tawjihi Time is a comprehensive educational platform featuring:
+## Features
 
-- ✅ Real authentication (Google OAuth + Admin Login)
-- ✅ Real database (PostgreSQL with proper migrations)
-- ✅ Real backend APIs (REST architecture)
-- ✅ Real authorization (Role-based + Permission system)
-- ✅ Real student accounts with profile management
-- ✅ Real admin accounts with role promotion
-- ✅ Content management system (Dynamic subjects, units, lessons, sections)
-- ✅ Exam system with question/answer management
-- ✅ Student exam-taking with results tracking
-- ✅ Student progress notes with admin replies
-- ✅ Messaging system (Student-Admin communication)
-- ✅ Notifications system (Real-time alerts)
-- ✅ Announcements management
-- ✅ Audit logging (Activity tracking)
-- ✅ Professional admin dashboard
-- ✅ Personalized student dashboard
+✨ **Student Platform:**
+- 🔐 Secure authentication (Google OAuth + Email/Password)
+- 📚 Complete curriculum management with subjects, units, lessons, and sections
+- ✏️ Student notes with admin replies
+- 💬 Public chat system for students (with admin moderation)
+- 📝 Exams and quizzes system
+- 📊 Results tracking and performance predictions
+- 📅 Weekly schedule management
+- 📢 Announcements system
+- 🔔 Real-time notifications
+- 📱 Fully responsive design (mobile, tablet, desktop)
 
-## 🏗️ Architecture
+🛡️ **Admin Platform:**
+- 👥 Complete student management
+- 📋 Role-based access control (RBAC) with granular permissions
+- 🎓 Academic stages and fields management
+- 📚 Educational content creation and management
+- ✅ Exam creation and student performance tracking
+- 💬 Student communication and chat moderation
+- 📊 Results and statistics
+- 📝 Audit logs for all administrative actions
+- 🔑 Super Admin panel for administrator management
 
-### Backend Stack
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: PostgreSQL with proper migrations
-- **Authentication**: JWT + Google OAuth
-- **Password Hashing**: bcryptjs
-- **Validation**: express-validator
+🚀 **Technical Highlights:**
+- Built with React + Vite for optimal performance
+- Express.js backend with SQLite database
+- Secure session management and password hashing
+- Production-ready deployment guides
+- GitHub Actions CI/CD integration
+- RTL (Right-to-Left) support for Arabic
+- Modern, professional UI design
 
-### Frontend Stack
-- **Framework**: React 18
-- **Bundler**: Vite
-- **Routing**: React Router
-- **HTTP Client**: Axios
-- **State Management**: Zustand
-- **Notifications**: React Hot Toast
-- **Icons**: React Icons
+## Quick Start
 
-### Database Design
-- **Normalized relational schema** with proper foreign keys
-- **Soft deletion** for important educational data
-- **Audit logging** for all administrative actions
-- **Role-based permissions** system
-- **Real data** (no hardcoded values)
+### Local Development
 
-## 📁 Project Structure
-
-```
-tawjihi-time/
-├── backend/                          # Express.js backend
-│   ├── src/
-│   │   ├── server.js                # Main server entry point
-│   │   ├── routes/                  # API routes
-│   │   │   ├── auth.js              # Authentication routes
-│   │   │   ├── students.js          # Student management
-│   │   │   ├── subjects.js          # Subject management
-│   │   │   ├── exams.js             # Exam management
-│   │   │   ├── results.js           # Results/grades
-│   │   │   ├── notes.js             # Student notes
-│   │   │   ├── messages.js          # Messaging
-│   │   │   ├── admin.js             # Admin management
-│   │   │   └── ...
-│   │   ├── middleware/
-│   │   │   ├── auth.js              # Authentication middleware
-│   │   │   └── ...
-│   │   ├── controllers/             # Business logic
-│   │   ├── models/                  # Data models
-│   │   ├── utils/                   # Utilities
-│   │   │   └── superAdminInit.js    # Super admin initialization
-│   │   └── config/
-│   │       └── database.js          # Database connection
-│   ├── .env.example                 # Environment template
-│   └── package.json
-├── database/                         # Database files
-│   ├── migrations/
-│   │   └── 001_initial_schema.sql   # Initial database schema
-│   ├── seeds/                       # Data seeds
-│   ├── runMigrations.js             # Migration runner
-│   └── seed.js                      # Data seeding script
-├── frontend/                         # React frontend
-│   ├── src/
-│   │   ├── main.jsx                 # Entry point
-│   │   ├── App.jsx                  # Root component
-│   │   ├── pages/                   # Page components
-│   │   │   ├── StudentDashboard.jsx
-│   │   │   ├── AdminDashboard.jsx
-│   │   │   ├── AdminLogin.jsx
-│   │   │   ├── StudentLogin.jsx
-│   │   │   └── ...
-│   │   ├── components/              # Reusable components
-│   │   ├── hooks/                   # Custom React hooks
-│   │   ├── utils/                   # Utility functions
-│   │   └── styles/                  # Global styles
-│   ├── public/                      # Static assets
-│   ├── .env.example                 # Environment template
-│   ├── vite.config.js               # Vite configuration
-│   └── package.json
-├── README.md                        # This file
-└── .gitignore
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 16+
-- PostgreSQL 12+
-- npm or yarn
-
-### Installation
-
-1. **Clone or extract the project**
+1. **Clone the repository:**
    ```bash
+   git clone https://github.com/yourusername/tawjihi-time.git
    cd tawjihi-time
    ```
 
-2. **Install Backend Dependencies**
+2. **Install dependencies:**
    ```bash
-   cd backend
    npm install
    ```
 
-3. **Install Frontend Dependencies**
+3. **Create environment file:**
    ```bash
-   cd ../frontend
-   npm install
-   ```
-
-4. **Configure Environment Variables**
-
-   **Backend (.env):**
-   ```bash
-   cd ../backend
    cp .env.example .env
    ```
-   
-   Edit `.env` with your configuration:
+
+4. **Set up environment variables** (edit `.env`):
    ```
-   DATABASE_USER=tawjihi_user
-   DATABASE_PASSWORD=your_secure_password
-   SUPER_ADMIN_EMAIL=ahmad169qyp12q@gmail.com
-   SUPER_ADMIN_PASSWORD=169qyp12q@
-   GOOGLE_CLIENT_ID=your_google_client_id
-   GOOGLE_CLIENT_SECRET=your_google_client_secret
-   JWT_SECRET=your_jwt_secret_key_min_32_chars
    PORT=3001
+   SESSION_SECRET=your-random-secret-here
+   SUPER_ADMIN_EMAIL=admin@example.com
+   SUPER_ADMIN_PASSWORD=replace-with-a-unique-strong-password
    ```
 
-   **Frontend (.env):**
+5. **Start development server:**
    ```bash
-   cd ../frontend
-   cp .env.example .env
-   ```
-   
-   Edit `.env`:
-   ```
-   VITE_API_URL=http://localhost:3001/api
-   VITE_GOOGLE_CLIENT_ID=your_google_client_id
-   ```
-
-5. **Initialize Database**
-   ```bash
-   cd ../database
-   node runMigrations.js
-   ```
-
-6. **Start Backend Server**
-   ```bash
-   cd ../backend
    npm run dev
    ```
-   Server runs on http://localhost:3001
 
-7. **Start Frontend Development Server** (new terminal)
-   ```bash
-   cd frontend
-   npm run dev
-   ```
-   Frontend runs on http://localhost:5173
+6. **Open your browser:**
+   - **Student Dashboard:** http://localhost:5173
+   - **Admin Login:** http://localhost:5173/admin/login
+   - **API Server:** http://localhost:3001
 
-## 📊 Database
+### Super Admin Login
 
-### Schema Overview
+The initial Super Admin is created from `SUPER_ADMIN_EMAIL` and `SUPER_ADMIN_PASSWORD` in your private environment configuration. Never commit real credentials or `.env` to Git.
 
-The platform uses a normalized PostgreSQL schema with the following main tables:
+## Project Structure
 
-- **users** - Student and Admin accounts
-- **grades** - Educational grade levels (1st, 2nd, 3rd Secondary)
-- **subjects** - Course subjects (dynamic)
-- **units** - Course units
-- **lessons** - Lessons within units
-- **sections** - CMS content sections
-- **exams** - Exam definitions
-- **questions** - Exam questions
-- **answers** - Answer options
-- **exam_attempts** - Student exam attempts
-- **exam_results** - Exam results and scores
-- **student_notes** - Student progress notes
-- **messages** - Student-admin messages
-- **announcements** - Platform announcements
-- **notifications** - User notifications
-- **admin_permissions** - Role-based permissions
-- **audit_logs** - Activity logging
-
-### Running Migrations
-```bash
-cd database
-node runMigrations.js
+```
+tawjihi-time/
+├── src/                    # Frontend React application
+│   ├── App.jsx            # Main application component
+│   ├── main.jsx           # React DOM entry point
+│   └── index.css           # Global styles
+├── server/                 # Backend Express server
+│   ├── index.js           # Main server file
+│   ├── db.js              # Database initialization
+│   └── init.js            # Database schema and initialization
+├── public/                 # Static assets
+├── data/                   # SQLite database (created on first run)
+├── .github/workflows/      # GitHub Actions CI/CD
+├── vite.config.js         # Vite configuration
+├── package.json           # Dependencies and scripts
+├── .env.example           # Environment variables template
+└── DEPLOYMENT.md          # Production deployment guide
 ```
 
-### Database Seeding (Optional)
+## Technology Stack
+
+- **Frontend:**
+  - React 18.3
+  - React Router 6.28
+  - Vite 5.4 (build tool)
+
+- **Backend:**
+  - Express.js 4.21
+  - Node.js 18+
+
+- **Database:**
+  - SQLite 3 (default)
+  - Can be configured for PostgreSQL
+
+- **Authentication:**
+  - Passport.js with Google OAuth
+  - bcryptjs for password hashing
+  - express-session for session management
+
+- **Security:**
+  - Helmet.js for HTTP headers
+  - CORS for cross-origin requests
+  - Password hashing with bcryptjs
+  - Parameterized queries for SQL injection prevention
+
+## Available Scripts
+
+### Development
 ```bash
-node seed.js
+npm run dev              # Start dev server (frontend + backend)
+npm run dev:server      # Start backend only
+npm run dev:client      # Start frontend only
 ```
 
-## 🔐 Authentication & Authorization
+### Production
+```bash
+npm run build           # Build React frontend
+npm run start:prod      # Start production server
+```
 
-### Student Authentication
-- Google OAuth 2.0 login
-- First-time users complete their profile (grade, subjects)
-- Automatic account creation
-- Profile picture from Google
-- Session-based JWT tokens
+### Testing
+```bash
+npm test                # Run tests (if configured)
+npm run lint            # Run linter (if configured)
+```
 
-### Admin Authentication
-- Email/password login
-- Super Admin initialized from environment variables
+## Database
+
+### SQLite (Default)
+The application uses SQLite by default with file-based storage at `./data/tawjihi.sqlite`.
+
+**Pros:**
+- No external database needed
+- Easy to set up and deploy
+- Good for small to medium deployments
+
+**Cons:**
+- Limited concurrent access
+- Not ideal for very large datasets
+
+### PostgreSQL (Optional)
+To use PostgreSQL:
+1. Install PostgreSQL client: `npm install pg`
+2. Update `server/db.js` to use `pg` instead of `better-sqlite3`
+3. Set `DATABASE_URL` environment variable
+
+## User Roles
+
+### 1. Student
+- View curriculum and educational content
+- Take exams and view results
+- Write and receive notes with admins
+- Participate in public chat (if not muted)
+- View announcements and schedules
+
+### 2. Admin
+- Manage students and their progress
+- Create and manage educational content
+- Create exams and view results
+- Reply to student notes
+- Manage announcements
+- Moderate public chat (mute/unmute students)
+- **Limited permissions** - can only access features granted by Super Admin
+
+### 3. Super Admin
+- Full access to all features
+- Create and manage Admins
+- Grant/revoke Admin permissions
+- All capabilities of regular Admins
+- **Only one Super Admin** per instance
+
+## Environment Variables
+
+### Required
+- `PORT` - Server port (default: 3001)
+- `SESSION_SECRET` - Random secret for sessions
+- `SUPER_ADMIN_EMAIL` - Super Admin email
+- `SUPER_ADMIN_PASSWORD` - Super Admin password
+- `NODE_ENV` - Environment (development/production)
+
+### Optional
+- `GOOGLE_CLIENT_ID` - Google OAuth Client ID
+- `GOOGLE_CLIENT_SECRET` - Google OAuth Client Secret
+- `GOOGLE_CALLBACK_URL` - Google OAuth callback URL
+- `FRONTEND_URL` - Production frontend URL
+- `DB_PATH` - Custom database path
+
+## API Endpoints
+
+### Authentication
+- `POST /api/auth/login` - Student login
+- `POST /api/admin/login` - Admin login
+- `GET /api/auth/session` - Get current session
+- `POST /api/auth/logout` - Logout
+- `GET /api/auth/google` - Google OAuth
+
+### Student Resources
+- `GET /api/student/curriculum` - Get assigned subjects
+- `GET /api/student/exams` - Get available exams
+- `GET /api/student/results` - Get exam results
+- `GET /api/student/notes` - Get student notes
+- `POST /api/student/notes` - Create note
+- `GET /api/student/progress` - Get progress data
+- `GET /api/notifications` - Get notifications
+- `GET /api/public-chat/messages` - Get public chat
+- `POST /api/public-chat/message` - Send chat message
+
+### Admin Resources
+- `GET /api/admin/dashboard` - Dashboard stats
+- `GET /api/admin/students` - List students
+- `GET /api/admin/subjects` - List subjects
+- `GET /api/admin/exams` - List exams
+- `GET /api/admin/results` - Get all results
+- And many more...
+
+See the source code for complete API documentation.
+
+## Production Deployment
+
+The application is production-ready and can be deployed to:
+- **Vercel** (Recommended for frontend)
+- **Railway** (Good for full-stack)
+- **Replit** (Easy setup)
+- **Self-hosted servers**
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment instructions.
+
+### Quick Deploy Checklist
+
+- [ ] Configure environment variables
+- [ ] Generate secure SESSION_SECRET
+- [ ] Set Super Admin credentials
+- [ ] Configure Google OAuth (optional)
+- [ ] Set FRONTEND_URL for production domain
+- [ ] Run `npm run build`
+- [ ] Test production build locally
+- [ ] Deploy to hosting platform
+- [ ] Verify HTTPS is enabled
+- [ ] Test all major user flows
+- [ ] Set up automated backups
+- [ ] Monitor application logs
+
+## Security
+
+### Best Practices Implemented
+
+✅ **Authentication:**
+- Google OAuth 2.0 support
 - Secure password hashing with bcryptjs
-- JWT token-based sessions
+- Session-based authentication
+- Secure cookies (httpOnly, sameSite)
 
-### Authorization
-- **Roles**: `student`, `admin`, `super_admin`
-- **Permissions System**: Fine-grained permissions
-  - `manage_students`
-  - `view_students`
-  - `manage_subjects`
-  - `manage_units`
-  - `manage_lessons`
-  - `manage_sections`
-  - `manage_exams`
-  - `manage_questions`
-  - `view_results`
-  - `manage_notes`
-  - `reply_to_students`
-  - `manage_messages`
-  - `manage_announcements`
-  - `manage_files`
-  - `manage_settings`
-  - `manage_admins`
+✅ **Authorization:**
+- Role-Based Access Control (RBAC)
+- Permission-based feature access
+- Backend validation of all permissions
+- Super Admin protection
 
-## 🎓 Features
+✅ **Data Protection:**
+- SQL injection prevention (parameterized queries)
+- XSS protection (Helmet.js)
+- CORS configuration
+- Secure headers
+- Input validation
 
-### For Students
-- ✅ Personalized dashboard with relevant content
-- ✅ View subjects and lessons
-- ✅ Take exams with timed questions
-- ✅ View exam results and scores
-- ✅ Write progress notes
-- ✅ Receive admin replies
-- ✅ Send messages to admins
-- ✅ View announcements
-- ✅ Manage profile
+✅ **Secrets Management:**
+- No secrets in source code
+- Environment variables for configuration
+- Password hashing before storage
+- OAuth secrets never exposed
 
-### For Admins
-- ✅ Comprehensive admin dashboard with statistics
-- ✅ Manage students (search, filter, view profiles)
-- ✅ Create and manage subjects
-- ✅ Create units and lessons
-- ✅ Create content sections (CMS)
-- ✅ Create and manage exams
-- ✅ View exam results and analytics
-- ✅ Manage student notes and replies
-- ✅ Manage announcements
-- ✅ Send messages to students
-- ✅ Manage admin permissions
-- ✅ View audit logs
-- ✅ Platform settings
+### Security Checklist for Production
 
-### For Super Admin
-- ✅ All admin features
-- ✅ Promote students to admin
-- ✅ Manage admin accounts
-- ✅ Grant/revoke permissions
-- ✅ Full audit log access
+- [ ] Change default Super Admin credentials
+- [ ] Generate random SESSION_SECRET
+- [ ] Enable HTTPS/TLS
+- [ ] Configure secure cookies
+- [ ] Set up database backups
+- [ ] Enable rate limiting
+- [ ] Monitor access logs
+- [ ] Regular security updates
+- [ ] Secure Google OAuth keys
+- [ ] Validate all user inputs
 
-## 🔒 Security Features
+## Performance
 
-- ✅ Passwords never stored in plaintext (bcryptjs hashing)
-- ✅ JWT authentication with expiration
-- ✅ Environment variables for secrets (no hardcoded credentials)
-- ✅ Backend authorization checks (not frontend-only)
-- ✅ CORS protection
-- ✅ Helmet.js security headers
-- ✅ Input validation (express-validator)
-- ✅ SQL injection protection (parameterized queries)
-- ✅ XSS protection (content sanitization)
-- ✅ Secure session handling
-- ✅ Activity audit logging
-- ✅ Account status management
+The application is optimized for performance:
+- **Frontend:** Vite's fast build system, code splitting, lazy loading
+- **Backend:** Efficient database queries, pagination, caching
+- **Database:** Indexed queries, soft deletes for archival
+- **Deployment:** CDN-ready, gzip compression, browser caching
 
-## 📝 API Documentation
+## Troubleshooting
 
-### Base URL
-```
-http://localhost:3001/api
-```
-
-### Authentication Routes
-- `POST /auth/admin/login` - Admin login
-- `POST /auth/google/callback` - Google OAuth callback
-- `POST /auth/complete-profile` - Complete student profile
-- `GET /auth/me` - Get current user
-- `POST /auth/logout` - Logout
-
-### Student Routes (Protected)
-- `GET /students/dashboard` - Student dashboard
-- `GET /students/profile` - Get profile
-- `PUT /students/profile` - Update profile
-- `GET /students/notes` - Get notes
-- `POST /students/notes` - Create note
-- `GET /students/exams` - List available exams
-- `POST /students/exams/:id/start` - Start exam
-- `POST /students/exams/:id/submit` - Submit exam
-- `GET /students/results` - Get exam results
-- `GET /students/announcements` - Get announcements
-- `GET /students/messages` - Get messages
-- `POST /students/messages` - Send message
-- `GET /students/notifications` - Get notifications
-
-### Admin Routes (Protected)
-- `GET /admin/dashboard` - Admin dashboard
-- `GET /admin/students` - List students
-- `GET /admin/students/:id` - Get student details
-- `GET /admin/subjects` - List subjects
-- `POST /admin/subjects` - Create subject
-- `PUT /admin/subjects/:id` - Edit subject
-- `DELETE /admin/subjects/:id` - Delete subject
-- `GET /admin/exams` - List exams
-- `POST /admin/exams` - Create exam
-- `GET /admin/results` - View results
-- `GET /admin/notes` - View student notes
-- `POST /admin/notes/:id/reply` - Reply to note
-- `GET /admin/announcements` - List announcements
-- `POST /admin/announcements` - Create announcement
-- `GET /admin/messages` - List messages
-- `GET /admin/audit-logs` - View audit logs
-
-### Super Admin Routes (Protected)
-- All admin routes
-- `GET /admin/admins` - List admins
-- `POST /admin/admins` - Promote student
-- `DELETE /admin/admins/:id` - Remove admin
-- `PUT /admin/admins/:id/permissions` - Manage permissions
-
-## 🧪 Development
-
-### Backend Development
+### Database Lock Error
+If you see SQLite database lock error:
 ```bash
-cd backend
-npm run dev      # Start with nodemon (auto-reload)
-npm start        # Production start
+# This is normal for SQLite under high concurrent access
+# Consider switching to PostgreSQL for production
 ```
 
-### Frontend Development
-```bash
-cd frontend
-npm run dev      # Start Vite dev server
-npm run build    # Production build
-npm run preview  # Preview build
-```
+### CORS Errors
+- Check `FRONTEND_URL` environment variable
+- Ensure it matches your actual domain
+- Verify backend CORS configuration
 
-### Database Migrations
-```bash
-cd database
-node runMigrations.js    # Run pending migrations
-```
+### Slow Performance
+- Check database queries with explain
+- Enable query result caching
+- Paginate large result sets
+- Use CDN for static assets
 
-## 📦 Deployment
+### Login Issues
+- Verify session secret is set
+- Check browser cookies are enabled
+- Clear cookies and try again
+- Check application logs
 
-### Production Build
+## Contributing
 
-**Backend:**
-```bash
-cd backend
-npm install
-npm start
-```
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-**Frontend:**
-```bash
-cd frontend
-npm install
-npm run build
-# dist/ folder contains production files
-```
+## License
 
-### Environment Variables (Production)
-Set these in your hosting platform:
-- `DATABASE_USER`
-- `DATABASE_PASSWORD`
-- `DATABASE_HOST`
-- `DATABASE_PORT`
-- `DATABASE_NAME`
-- `SUPER_ADMIN_EMAIL`
-- `SUPER_ADMIN_PASSWORD`
-- `GOOGLE_CLIENT_ID`
-- `GOOGLE_CLIENT_SECRET`
-- `JWT_SECRET`
-- `PORT`
-- `NODE_ENV=production`
+This project is private and proprietary. All rights reserved.
 
-## 📊 Validation & Error Handling
+## Support
 
-- ✅ Frontend validation (client-side user experience)
-- ✅ Backend validation (server-side security)
-- ✅ Proper HTTP status codes
-- ✅ Detailed error messages (without exposing secrets)
-- ✅ Loading states for async operations
-- ✅ Empty states for no data
-- ✅ Confirmation dialogs for destructive actions
-- ✅ Pagination for large datasets
-- ✅ Search and filtering
+For issues, questions, or suggestions:
+- Check [DEPLOYMENT.md](DEPLOYMENT.md) for deployment help
+- Review the source code comments
+- Check GitHub issues
+- Create a new issue for bugs
 
-## 📄 License
+## Roadmap
 
-This project is built for educational purposes.
+Future enhancements:
+- [ ] Mobile app (React Native)
+- [ ] Video lesson support
+- [ ] Assignment submission system
+- [ ] Gamification (badges, leaderboards)
+- [ ] Parent portal
+- [ ] Teacher accounts
+- [ ] Advanced analytics
+- [ ] Multi-language support
+- [ ] Dark mode UI
+- [ ] Voice/video chat
 
-## 👨‍💻 Development Status
+## Credits
 
-This is the initial setup phase covering:
-- ✅ Project structure
-- ✅ Database schema
-- ✅ Authentication routes
-- ✅ Basic configuration
-
-### Next Steps
-- [ ] Implement student management APIs
-- [ ] Implement subject/curriculum management
-- [ ] Implement exam system
-- [ ] Implement results tracking
-- [ ] Implement student notes & messaging
-- [ ] Implement notification system
-- [ ] Build student dashboard UI
-- [ ] Build admin dashboard UI
-- [ ] Testing & quality assurance
-- [ ] Deployment setup
+Built with ❤️ for Jordanian Tawjihi students.
 
 ---
 
-**Version**: 1.0.0  
-**Last Updated**: August 2026
+**Ready to deploy?** See [DEPLOYMENT.md](DEPLOYMENT.md) for production deployment instructions.
+
+**Ready to develop?** Run `npm run dev` to start coding!
+
+**Questions?** Check the source code or create an issue.
+
+Tawjihi Time - Empowering Jordanian Students 🎓

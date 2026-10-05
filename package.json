@@ -1,0 +1,40 @@
+{
+  "name": "tawjihi-time",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "nodemon --watch server server/index.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "build:check": "vite build && echo 'Build successful!'",
+    "preview": "vite preview",
+    "start": "node server/index.js",
+    "start:prod": "NODE_ENV=production node server/index.js",
+    "test": "echo \"No tests configured\"",
+    "lint": "echo \"No linter configured\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^13.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.17.3",
+    "helmet": "^8.0.1",
+    "morgan": "^1.10.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.14",
+    "vite": "^5.4.10"
+  }
+}

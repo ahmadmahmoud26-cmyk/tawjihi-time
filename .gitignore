@@ -1,45 +1,8 @@
-# Dependencies
-node_modules/
-package-lock.json
-yarn.lock
-
-# Environment variables
+node_modules
 .env
-.env.local
-.env.*.local
-
-# Build outputs
-dist/
-build/
-*.tsbuildinfo
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-
-# Logs
-*.log
-logs/
-
-# OS
-Thumbs.db
-.DS_Store
-
-# Database
+dist
+coverage
+data/
 *.db
-*.sqlite3
-
-# Uploads
-uploads/
-
-# Testing
-coverage/
-.nyc_output/
-
-# Replit specific
-.replit
-.upm/
+*.sqlite
+*.sqlite-*
